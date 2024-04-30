@@ -13,7 +13,7 @@ export const createBlog = async (req, res) => {
   
   try {
    const newBlog = await blogService.create(blog, content, user);
-   newBlog = _.omit(newBlog, ['tags'])
+  //  newBlog = _.omit(newBlog, ['tags'])
  return  res.status(201).json({message: "Blog successfully created", data: newBlog})
   } catch (error) {
    logger.error(error);

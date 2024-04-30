@@ -21,8 +21,8 @@ blogRoute.get("/me", blogController.getBlogsByOwnerId)
 
 // restricted route to only owner
 blogRoute.use(checkOwnerMiddleware)
-blogRoute.put("/:id/update",  blogController.updateBlog)
-blogRoute.delete("/:id/delete", blogController.deleteBlog);
+blogRoute.put("/update/:id",  blogController.updateBlog)
+blogRoute.delete("/delete/:id", blogController.deleteBlog);
 
 
 

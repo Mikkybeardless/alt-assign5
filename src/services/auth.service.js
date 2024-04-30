@@ -26,14 +26,14 @@ export const login = async (email, password)=>{
         sub: user._id
         },
         JWT_SECRET,
-        {expiresIn: "1h"}
+        {expiresIn: "10m"}
     )
 
     return token;
 }
 
 
-export const register = async (first_name,last_name, email, password, role) =>{
+export const register = async (U_name, email, password, role) =>{
 
  const user = await User.findOne({email})
 
@@ -45,8 +45,7 @@ export const register = async (first_name,last_name, email, password, role) =>{
  password = await bcrypt.hash(password,10);
 
  const newUser = new User({
-    first_name,
-    last_name,
+    U_name,
     email,
     password,
     role

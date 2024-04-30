@@ -12,7 +12,6 @@ export const create = async (blog, content, user) =>{
        // Assuming average reading speed of 100 words per minute
    const readingTime = Math.ceil(words / 200);
    blog.user = user
-   blog.owner = user.id
    blog.reading_time = readingTime
 
    const newBlog = await Blog.create(blog);
